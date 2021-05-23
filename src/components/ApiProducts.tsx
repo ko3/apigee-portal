@@ -28,20 +28,22 @@ const ApiProducts = ()=>{
       <div>
         Count from call: {apiProducts && apiProducts.apiProduct && apiProducts.apiProduct.length}
         { displayList &&
-        <div className="table-container">
-          <div className="table-header">
-            <div className="table-header-data">DISPLAY NAME</div>
-            <div className="table-header-data">ENVIRONMENTS</div>
-            <div className="table-header-data">DESCRIPTION</div>
-            <div className="table-header-data">MODIFIED</div>
+        <div className="list-view">
+          <div className="list-headers">
+            <div className="list-headers-cell list-cell-width-20">DISPLAY NAME</div>
+            <div className="list-headers-cell list-cell-width-15">ENVIRONMENTS</div>
+            <div className="list-headers-cell list-cell-width-45">DESCRIPTION</div>
+            <div className="list-headers-cell list-cell-width-20">MODIFIED</div>
           </div>
           
           {apiProducts.apiProduct.map(product => (
-                 <div className="table-row" key={product.name} onClick={()=>routeTo("/" + product.name)}>
-                  <div className="table-data">{product.displayName}</div>
-                  <div className="table-data">{product.environments.join(",")}</div>
-                  <div className="table-data">{product.description}</div>
-                  <div className="table-data">{new Date(product.lastModifiedAt).toLocaleString()}</div>
+                 <div className="list-rows" key={product.name} onClick={()=>routeTo("/" + product.name)}>
+                  <div className="list-rows-wrapper">
+                    <div className="list-rows-cell list-cell-width-20">{product.displayName}</div>
+                    <div className="list-rows-cell list-cell-width-15">{product.environments.join(",")}</div>
+                    <div className="list-rows-cell list-cell-width-45">{product.description}</div>
+                    <div className="list-rows-cell list-cell-width-20">{new Date(product.lastModifiedAt).toLocaleString()}</div>
+                  </div>
                 </div>
               ))
               }

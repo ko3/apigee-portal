@@ -27,20 +27,20 @@ const CouterComponent = () => {
     }
 
     return(
-    <div>
-        <div>Count: {count}</div>
-        <button onClick={incrementCounter()}>Increase Count</button>
-        <button onClick={decrementCounter()}>Decrease Count</button>
-        <div>Form data: {dataState}</div>
-        <form onSubmit={handleSubmit}>
-            <input
-                placeholder="Enter here"
-                value={data}
-                onChange={udpateData()}
-            />
-        <button>Set</button>
-        </form>
-    </div>
+      <div>
+          <div>Count: {count}</div>
+          <button onClick={incrementCounter()}>Increase Count</button>
+          <button onClick={decrementCounter()}>Decrease Count</button>
+          <div>Form data: {dataState}</div>
+          <form onSubmit={handleSubmit}>
+              <input
+                  placeholder="Enter here"
+                  value={data}
+                  onChange={udpateData()}
+              />
+          <button>Set</button>
+          </form>
+      </div>
     );
 }
 

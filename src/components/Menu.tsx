@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Menu = () => {
     return (
-      <div className="grid-menu">
+      <div className="grid-menu nav-bar">
         <ul>
                 <li>
                   <NavLink activeClassName="active" exact  to='/'>Home</NavLink>
