@@ -4,14 +4,13 @@ import { BrowserRouter} from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import User from "./components/User";
-import ApiProducts from "./components/ApiProducts";
+import ApiProducts from "./components/products/ApiProducts";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 import { Provider } from "react-redux";
 import store from "./store/Store";
 import CounterComponent from "./components/CounterComponent";
-import ApiProductView from "./components/ApiProductView";
 
 const App = () => {
 

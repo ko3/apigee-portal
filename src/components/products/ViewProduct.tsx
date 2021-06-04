@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { ApiProduct, Attribute } from "../services/ApiProductsType";
-import { AppState } from "../store/Types";
+import { ApiProduct, Attribute } from "../../services/ApiProductsType";
+import { AppState } from "../../store/Types";
 
-const ApiProductView = ()=>{
+const ViewProduct = ()=>{
     const {apiProductName} = useParams() as {
         apiProductName: string
     }
@@ -174,7 +174,7 @@ const ApiProductView = ()=>{
     );
 }
 
-export default ApiProductView;
+export default ViewProduct;
 
 
 

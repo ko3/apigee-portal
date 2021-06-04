@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Default API will be your root
 const TIMEOUT = 20000;
-const AUTH_HEADER = "Bearer ";
+const AUTH_HEADER = "Bearer ***REMOVED***";
 const HEADERS = {
   'Content-Type': 'application/json',
   Accept: 'application/json',
