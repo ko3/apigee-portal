@@ -11,6 +11,7 @@ import ViewProducts from "./ViewProducts";
 const ApiProducts = ()=>{
     const [displayList, setDisplayList] = useState(true);
     const [displayAddProduct, setDisplayAddProduct] = useState(false);
+    const [displayAddProductButton, setDisplayAddProductButton] = useState(true);
     const apiProducts = useSelector((state: AppState)=> state.apiProducts);
     const dispatch = useDispatch();
     useEffect(() => {
@@ -24,29 +25,29 @@ const ApiProducts = ()=>{
       console.log(productName);
       setDisplayList(false);
       setDisplayAddProduct(false);
-      //dispatch(fetchApiProduct(to))
+      setDisplayAddProductButton(false);
       history.push("/apiproducts" + productName);
     };
 
     const defaultProductView = () => {
       setDisplayAddProduct(false);
       setDisplayList(true);
-      setDisplayAddProduct(false);
+      setDisplayAddProductButton(true);
     };
 
     const backToProductView = () => {
       setDisplayAddProduct(false);
       setDisplayList(true);
-      setDisplayAddProduct(false);
+      setDisplayAddProductButton(true);
       history.push("/apiproducts");
     };
  
     return (
       <div>
         <div>Count from call: {apiProducts && apiProducts.apiProduct && apiProducts.apiProduct.length}</div>
-        {!displayAddProduct && 
+        {displayAddProductButton && 
         <div>
-          <button onClick={()=> {setDisplayAddProduct(true); setDisplayList(false);}}>Add API Product</button>
+          <button onClick={()=> {setDisplayAddProduct(true); setDisplayList(false); setDisplayAddProductButton(false);}}>Add API Product</button>
         </div>
         }
  
