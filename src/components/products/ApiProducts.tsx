@@ -11,7 +11,6 @@ import ViewProducts from "./ViewProducts";
 const ApiProducts = ()=>{
     const [displayList, setDisplayList] = useState(true);
     const [displayAddProduct, setDisplayAddProduct] = useState(false);
-    const [backToProducts, setBackToProducts] = useState(false);
     const apiProducts = useSelector((state: AppState)=> state.apiProducts);
     const dispatch = useDispatch();
     useEffect(() => {
@@ -25,9 +24,21 @@ const ApiProducts = ()=>{
       console.log(productName);
       setDisplayList(false);
       setDisplayAddProduct(false);
-      setBackToProducts(true);
       //dispatch(fetchApiProduct(to))
       history.push("/apiproducts" + productName);
+    };
+
+    const defaultProductView = () => {
+      setDisplayAddProduct(false);
+      setDisplayList(true);
+      setDisplayAddProduct(false);
+    };
+
+    const backToProductView = () => {
+      setDisplayAddProduct(false);
+      setDisplayList(true);
+      setDisplayAddProduct(false);
+      history.push("/apiproducts");
     };
  
     return (
@@ -38,20 +49,11 @@ const ApiProducts = ()=>{
           <button onClick={()=> {setDisplayAddProduct(true); setDisplayList(false);}}>Add API Product</button>
         </div>
         }
-        {backToProducts &&
-        <div>
-          <button onClick={()=> {setBackToProducts(false); setDisplayList(true);}}>Back To API Products</button>
-        </div>
-        }
-        {displayAddProduct &&
-        <div>
-          <button onClick={()=>{setDisplayAddProduct(false); setDisplayList(true);}}>Cancel</button>
-          <AddProduct/>
-        </div>
-        }
-        { displayList && <ViewProducts products={apiProducts} route={routeTo}/>}
+ 
+        {displayAddProduct && <AddProduct defaultView={defaultProductView}/>}
+        {displayList && <ViewProducts products={apiProducts} route={routeTo}/>}
         <Route path={"/apiproducts/:apiProductName"}>
-          <ViewProduct />
+          <ViewProduct defaultView={backToProductView}/>
         </Route>
       </div>
     );

@@ -1,8 +1,14 @@
 import React from "react";
-const AddProduct = () => {
-    return <div>
+
+type Props = {
+  defaultView: () => void;
+}
+const AddProduct: React.FC<Props> = (props) => {
+
+ const {defaultView} = props;
+  return <div>
     <div>
-      {/*<button onClick={()=>{setDisplayAddProduct(false); setDisplayList(true);}}>Cancel</button>*/}
+      <button onClick={()=> defaultView()}>Cancel</button>
       <button >Save</button>
     </div>
     <div className="catalog">
