@@ -1,6 +1,6 @@
 import { GET_API_PRODUCTS } from "./ApiProductsActions";
 import { Action} from "../Types";
-import { ApiProducts } from "../../services/ApiProductsType";
+import { ApiProducts } from "../Types";
 
 
 const initialState:ApiProducts = {
@@ -10,7 +10,9 @@ const ApiProductsReducers = (state:ApiProducts = initialState,action: Action): A
     switch(action.type){
         case GET_API_PRODUCTS:
 
-            return action.payload;
+            return {
+                ...state, apiProduct: action.payload
+            };
         default:
             return state;
     }

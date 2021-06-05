@@ -1,5 +1,3 @@
-import { ApiProducts } from "../services/ApiProductsType"
-
 
 export type Counter = {
     count: number,
@@ -13,5 +11,38 @@ export type Action = {
 
 export type AppState = {
     apiProducts: ApiProducts,
-    counter: Counter
+    counter: Counter,
+    accessToken: AccessToken
 } 
+
+export type AccessToken = {
+    accessToken: string
+}
+
+export type ApiProducts = {
+    apiProduct: ApiProduct[]
+}
+
+export type ApiProduct = {
+    apiResources: string [],
+    approvalType: string,
+    attributes: Attribute[],
+    createdAt: number,
+    createdBy: string,
+    description: string,
+    displayName: string,
+    environments: string[],
+    lastModifiedAt: number,
+    lastModifiedBy: string,
+    name: string,
+    proxies: string[],
+    quota: string,
+    quotaInterval: string,
+    quotaTimeUnit: string,
+    scopes: string[]
+}
+
+export type Attribute = {
+    name: string,
+    value: string
+}

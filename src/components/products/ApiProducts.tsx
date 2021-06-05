@@ -13,11 +13,10 @@ const ApiProducts = ()=>{
     const [displayAddProduct, setDisplayAddProduct] = useState(false);
     const [displayAddProductButton, setDisplayAddProductButton] = useState(true);
     const apiProducts = useSelector((state: AppState)=> state.apiProducts);
+    const token = useSelector((state: AppState)=> state.accessToken);
     const dispatch = useDispatch();
     useEffect(() => {
-      console.log("Starting to get api-products");
-      dispatch(fetchApiProducts());
-      console.log("Completed get api-products");
+      dispatch(fetchApiProducts(token.accessToken));    
     }, [dispatch]);
 
     const history = useHistory();

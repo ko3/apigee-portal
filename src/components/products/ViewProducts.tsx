@@ -1,5 +1,5 @@
 import React from "react";
-import { ApiProducts } from "../../services/ApiProductsType";
+import { ApiProducts } from "../../store/Types";
 
 type Props = {
     products: ApiProducts;
