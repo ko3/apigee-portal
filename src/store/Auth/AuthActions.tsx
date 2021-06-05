@@ -20,7 +20,7 @@ export const getAuthToken= (username: string, password: string) =>{
         })
         .catch(error => {
             console.log(error)
-            dispatch(action(GET_AUTH_TOKEN, 'UnAuthorized'));
+            dispatch(action(GET_AUTH_TOKEN, 'failed'));
         });
     }
 };
