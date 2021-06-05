@@ -15,7 +15,6 @@ import CounterComponent from "./components/CounterComponent";
 const App = () => {
 
     const renderUser = (props: any) => {
-        console.log("ScreenC props", props);
         return <User {...props} message="This is User" />;
         };
     return (

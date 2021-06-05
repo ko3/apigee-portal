@@ -12,16 +12,9 @@ const ViewProduct: React.FC<Props> = (props)=>{
         apiProductName: string
     }
     const apiProduct: ApiProduct | undefined = useSelector((state: AppState)=> {
-        console.log("State APIProducts")
-        console.log(state.apiProducts.apiProduct)
-        console.log("query param:" )
-        console.log( apiProductName)
         const val = state.apiProducts.apiProduct.find(prd => {
-            console.log("product name:" + prd.name);
            return prd.name === apiProductName;
         });
-        console.log("filtered apiProduct")
-        console.log(val)
         return val;
     });
     const getValue=(attributes:Attribute[], key: string) : string => {

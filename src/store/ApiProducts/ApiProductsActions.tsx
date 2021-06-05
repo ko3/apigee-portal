@@ -17,7 +17,6 @@ export const fetchApiProducts= (token: string) =>{
         };
         axios.get('https://api.enterprise.apigee.com/v1/organizations/eklft15-eval/apiproducts?expand=true', {headers: headers})
         .then(response => {
-            console.log(response)
             dispatch(action(GET_API_PRODUCTS, response.data.apiProduct))
         })
         .catch(error => {

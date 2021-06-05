@@ -13,15 +13,16 @@ const ApiProducts = ()=>{
     const [displayAddProduct, setDisplayAddProduct] = useState(false);
     const [displayAddProductButton, setDisplayAddProductButton] = useState(true);
     const apiProducts = useSelector((state: AppState)=> state.apiProducts);
-    const token = useSelector((state: AppState)=> state.accessToken);
+    const token = useSelector((state: AppState)=> state.accessToken.accessToken);
     const dispatch = useDispatch();
     useEffect(() => {
-      dispatch(fetchApiProducts(token.accessToken));    
+      if(token.length>8){
+        dispatch(fetchApiProducts(token));
+      }
     }, [dispatch]);
 
     const history = useHistory();
     const routeTo=(productName: string) => {
-      console.log(productName);
       setDisplayList(false);
       setDisplayAddProduct(false);
       setDisplayAddProductButton(false);

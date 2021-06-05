@@ -3,7 +3,7 @@ import { Action } from "../Types";
 import axios from 'axios';
 
 
-const action = (act: string, data: any | null): Action => ({ type: act, payload: data});
+export const action = (act: string, data: any | null): Action => ({ type: act, payload: data});
 
 export const GET_AUTH_TOKEN = "GET_AUTH_TOKEN";
 export const getAuthToken= (username: string, password: string) =>{
