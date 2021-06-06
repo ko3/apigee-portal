@@ -18,25 +18,6 @@ const App = () => {
         return <User {...props} message="This is User" />;
         };
     return (
-        /*<div className="wrapper">
-            <Provider store={store()}>
-                <BrowserRouter>
-                    <Header />
-                    <main className="main">
-                        <Switch>
-                            <Route exact={true} path="/" component = {Home} />
-                            <Route path="/apiproducts" component = {ApiProducts} />
-                            <Route path="/user/:userid" render={renderUser} />
-                            <Route path="/counter" component={CounterComponent} />
-                            <Route path="/about" component = {About} />
-                        </Switch>
-                    </main>
-                    <aside className="aside aside-1">Aside 1</aside>
-                    <aside className="aside aside-2">Aside 2</aside>
-                    <Footer />
-                </BrowserRouter>
-            </Provider>
-        </div> */
         <div className="grid-container">
             <Provider store={store()}>
                 <BrowserRouter>
@@ -51,11 +32,6 @@ const App = () => {
                             <Route path="/about" component = {About} />
                         </Switch>
                     </main>
-                    {/*<div className="grid-right">
-                        <div>right</div>
-                    </div>*/}
-                    {/*<aside className="aside aside-1">Aside 1</aside>
-                    <aside className="aside aside-2">Aside 2</aside>*/}
                     <Footer />
                 </BrowserRouter>
             </Provider>

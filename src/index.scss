@@ -1,64 +1,64 @@
 .grid-container {
   display: grid;
+  grid-template-columns: 15% auto;
+  grid-template-rows: 25% auto 25%;
   grid-template-areas:
     'menu header header header header header'
     'menu main main main main main'
     'menu footer footer footer footer footer';
-  //grid-gap: 10px;
-  background-color: #e5e7e9;
-  //padding: 10px;
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  //padding: 20px 0;
-  font-size: 30px;
+  background-color: white;
 }
 
 .grid-header {
   grid-area: header;
+  border: 2px solid silver;
+  border-width: thin;
+  border-radius: 5px;
 }
 
 .grid-menu {
   grid-area: menu;
+  border: 2px solid silver;
+  border-width: thin;
+  border-radius: 5px;
 }
 
 .grid-main {
   grid-area: main;
   padding: 5px;
+  border: 2px solid silver;
+  border-width: thin;
+  border-radius: 5px;
 }
 
-.grid-right {
-  grid-area: right;
+.menu-el {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  color: darkgray;
 }
+
+.menu-el:hover {
+  background-color: lightgray;
+}
+
+.menu-el a {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  color: #4d4d4d;
+  text-decoration: none;
+  display: block;
+}
+
+.menu-el-active {
+  background-color: darkgrey;
+}
+
 
 .grid-footer {
   grid-area: footer;
-}
-
-.nav-bar{
-  display: flex;
-  flex-direction: column;
-}
-ul {
-  list-style-type: none;
-  //margin: 0;
-  //padding: 0;
-  //width: 200px;
-  //background-color: #f1f1f1;
-}
-
-li a {
-  display: block;
-  color: #000;
-  //padding: 8px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #555;
-  color: white;
+  border: 2px solid silver;
+  border-width: thin;
+  border-radius: 5px;
 }
 
 
