@@ -44,6 +44,7 @@ const config: webpack.Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",
+      favicon: "src/favicon.ico"
     }),
     new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}),
     new ForkTsCheckerWebpackPlugin({
