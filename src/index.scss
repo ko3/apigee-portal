@@ -76,6 +76,12 @@ main {
   color: var(--text-secondary);
 }
 
+.nav-link-active {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
 .link-text {
   display: block;
   margin-left: 1rem;

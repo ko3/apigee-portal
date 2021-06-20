@@ -6,31 +6,31 @@ const Menu = () => {
       <nav className="navbar">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <NavLink exact className="nav-link" activeClassName="menu-el-active" to='/'>
+            <NavLink exact className="nav-link" activeClassName="nav-link-active" to='/'>
               <span className="link-text">Home</span>
             </NavLink>
           </li>
 
           <li className="nav-item">
-            <NavLink className="nav-link" activeClassName="menu-el-active" to='/apiproducts'>
+            <NavLink className="nav-link" activeClassName="nav-link-active" to='/apiproducts'>
               <span className="link-text">ApiProducts</span>
             </NavLink>
           </li>
 
           <li className="nav-item">
-            <NavLink className="nav-link" activeClassName="menu-el-active" to='/user/:userid'>
+            <NavLink className="nav-link" activeClassName="nav-link-active" to='/user/:userid'>
               <span className="link-text">User</span>
             </NavLink>
           </li>
 
           <li className="nav-item">
-            <NavLink className="nav-link" activeClassName="menu-el-active" to='/counter'>
+            <NavLink className="nav-link" activeClassName="nav-link-active" to='/counter'>
               <span className="link-text">Counter</span>
             </NavLink>
           </li>
 
           <li className="nav-item">
-            <NavLink className="nav-link" activeClassName="menu-el-active" to='/about'>
+            <NavLink className="nav-link" activeClassName="nav-link-active" to='/about'>
               <span className="link-text">About</span>
             </NavLink>
           </li>

@@ -13,7 +13,8 @@ interface Configuration extends webpack.Configuration {
 const config: Configuration = {
   mode: "development",
   output: {
-    publicPath: "/",
+    path: path.resolve(__dirname, "build"),
+    filename: "[name].[contenthash].js"
   },
   entry: "./src/index.tsx",
   module: {
@@ -64,7 +65,7 @@ const config: Configuration = {
     new ESLintPlugin({
       extensions: ["js", "jsx", "ts", "tsx"],
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}),
   ],
   devtool: "inline-source-map",
   devServer: {

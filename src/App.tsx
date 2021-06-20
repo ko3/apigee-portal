@@ -5,7 +5,6 @@ import About from "./components/About";
 import User from "./components/User";
 import ApiProducts from "./components/products/ApiProducts";
 import Header from "./components/Header";
-import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 
 import CounterComponent from "./components/CounterComponent";

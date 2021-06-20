@@ -11,7 +11,6 @@ const config: webpack.Configuration = {
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "[name].[contenthash].js",
-    publicPath: "",
   },
   module: {
     rules: [
@@ -46,7 +45,7 @@ const config: webpack.Configuration = {
     new HtmlWebpackPlugin({
       template: "src/index.html",
     }),
-    new MiniCssExtractPlugin({filename: 'style.css'}),
+    new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}),
     new ForkTsCheckerWebpackPlugin({
       async: false,
     }),
