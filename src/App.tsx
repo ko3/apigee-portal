@@ -1,6 +1,5 @@
 import React from "react";
 import {Route, Switch } from "react-router";
-import { BrowserRouter} from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import User from "./components/User";
@@ -8,8 +7,7 @@ import ApiProducts from "./components/products/ApiProducts";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
-import { Provider } from "react-redux";
-import store from "./store/Store";
+
 import CounterComponent from "./components/CounterComponent";
 
 const App = () => {
@@ -18,12 +16,10 @@ const App = () => {
         return <User {...props} message="This is User" />;
         };
     return (
-        <div className="grid-container">
-            <Provider store={store()}>
-                <BrowserRouter>
+        <main>
                     <Header />
-                    <Menu />
-                    <main className="grid-main">
+                   
+                    <div>
                         <Switch>
                             <Route exact={true} path="/" component = {Home} />
                             <Route path="/apiproducts" component = {ApiProducts} />
@@ -31,11 +27,10 @@ const App = () => {
                             <Route path="/counter" component={CounterComponent} />
                             <Route path="/about" component = {About} />
                         </Switch>
-                    </main>
+                    </div>
                     <Footer />
-                </BrowserRouter>
-            </Provider>
-        </div>
+               
+        </main>
       );
 }
 export default App;

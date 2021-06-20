@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
     return (
-      <header className="grid-header">
+      <header className="row">
         <div>Portal(Header)</div>
       </header>
     );
