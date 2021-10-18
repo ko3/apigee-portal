@@ -44,7 +44,6 @@ const ApiProducts = ()=>{
  
     return (
       <div>
-        <div>Count from call: {apiProducts && apiProducts.apiProduct && apiProducts.apiProduct.length}</div>
         {displayAddProductButton && 
         <div>
           <button onClick={()=> {setDisplayAddProduct(true); setDisplayList(false); setDisplayAddProductButton(false);}}>Add API Product</button>
