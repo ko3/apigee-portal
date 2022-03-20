@@ -70,7 +70,7 @@ const config: Configuration = {
   ],
   devtool: "inline-source-map",
   devServer: {
-    contentBase: path.join(__dirname, "build"),
+    static: path.join(__dirname, "build"),
     historyApiFallback: true,
     port: 3000,
     open: true,
